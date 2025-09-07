@@ -1,5 +1,7 @@
 # 🌟 RoamMentor - AI Personal Mentor
 
+[![Deploy to GitHub Pages](https://github.com/debarun1234/ai-personal-interactor/actions/workflows/deploy.yml/badge.svg)](https://github.com/debarun1234/ai-personal-interactor/actions/workflows/deploy.yml)
+
 An interactive AI chatbot that serves as your personal mentor, based on Debarun Ghosh's expertise across technology, academia, finance, and life guidance.
 
 ## 🚀 Live Demo
