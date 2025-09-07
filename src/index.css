@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .chat-bubble {
+    @apply rounded-lg px-4 py-2 max-w-[80%] break-words;
+  }
+  
+  .chat-bubble-user {
+    @apply bg-primary-500 text-white ml-auto;
+  }
+  
+  .chat-bubble-assistant {
+    @apply bg-gray-100 text-gray-900 mr-auto;
+  }
+  
+  .knowledge-chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium cursor-pointer transition-colors;
+  }
+  
+  .knowledge-chip-active {
+    @apply bg-primary-500 text-white;
+  }
+  
+  .knowledge-chip-inactive {
+    @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
+  }
+}
