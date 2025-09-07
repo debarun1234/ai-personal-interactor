@@ -77,6 +77,18 @@ export class MockChatService {
     persona: string, 
     context: string
   ): string {
+    // Handle casual greetings and simple questions
+    const casualGreetings = /^(hi|hello|hey|how are you|how are|what's up|sup|good morning|good afternoon|good evening)\??!*$/i;
+    const thankYou = /^(thanks|thank you|ty|thx)\??!*$/i;
+    
+    if (casualGreetings.test(userMessage.trim())) {
+      return this.generateGreetingResponse();
+    }
+    
+    if (thankYou.test(userMessage.trim())) {
+      return this.generateThankYouResponse();
+    }
+
     const modeResponses = {
       career: this.generateCareerResponse(userMessage, persona, context),
       academics: this.generateAcademicResponse(userMessage, persona, context),
@@ -86,6 +98,29 @@ export class MockChatService {
     };
 
     return modeResponses[mode as keyof typeof modeResponses] || this.generateGeneralResponse(userMessage, persona);
+  }
+
+  private static generateGreetingResponse(): string {
+    // Use the same friendly response as the backend
+    return `Hey there! 👋 I'm doing great, thanks for asking! 
+
+🔧 **I'm currently in beta testing mode** - think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits! ☕🤖
+
+I'm excited to chat with you about:
+🚀 **Career & Tech** • 🎓 **Academic Journey** • 💰 **Financial Planning** • ⚙️ **Technical Skills** • 🌟 **Life Guidance**
+
+What's on your mind today? I'd love to help you explore any of these areas! 😊`;
+  }
+
+  private static generateThankYouResponse(): string {
+    // Use the same friendly response as the backend
+    return `You're so welcome! 😊 
+
+That's what I'm here for - helping awesome people like you navigate life's challenges and opportunities!
+
+Feel free to ask me anything else about career moves, academic planning, tech skills, financial strategies, or just life in general. I've got tons of knowledge ready to share! 🌟
+
+What else can we explore together? ☕`;
   }
 
   private static generateCareerResponse(_userMessage: string, persona: string, context: string): string {
@@ -188,18 +223,24 @@ ${context ? `\n**Personal insights:**\n${context}` : ''}`;
     return this.applyPersona(baseResponse, persona);
   }
 
-  private static generateGeneralResponse(_userMessage: string, persona: string): string {
-    const baseResponse = `Thank you for your question. Based on my diverse experience across technology, academia, and personal development, I'd be happy to help guide you.
+  private static generateGeneralResponse(userMessage: string, persona: string): string {
+    const baseResponse = `Hey there! 👋 Thanks for asking about "${userMessage}". 
 
-Could you tell me more about your specific situation or goals? This will help me provide more targeted advice based on my experience.
+🔧 **I'm currently in beta testing mode!** Think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits. ☕🤖
 
-**Some areas where I can help:**
-- Career transitions and technical skills
-- Academic planning and research direction  
-- Financial planning and investment strategies
-- Personal growth and decision-making
+While I'm getting my full AI powers activated, I can still help you explore these areas where I have tons of knowledge:
 
-What would be most valuable for you right now?`;
+🚀 **Career & Tech**: SRE, DevOps, transitioning from academia to industry
+🎓 **Academic Journey**: PhD applications, research strategies, university selection  
+💰 **Financial Planning**: Tax optimization, investment strategies, salary structuring
+⚙️ **Technical Skills**: AI/ML, automation, enterprise architecture
+🌟 **Life Guidance**: Decision-making, work-life balance, personal growth
+
+**Coming Soon**: Full AI-powered conversations! I'm just waiting for my creator to flip the "smart mode" switch. Until then, I'm like a friendly librarian who knows exactly where all the good stuff is stored! 📚✨
+
+**Pro tip**: Try exploring different topics - my knowledge search is already working great, and you might find exactly what you're looking for!
+
+What would you like to dive into? I promise the wait for full AI mode will be worth it! 😊`;
 
     return this.applyPersona(baseResponse, persona);
   }

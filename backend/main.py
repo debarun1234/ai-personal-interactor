@@ -356,6 +356,31 @@ async def rebuild_knowledge_base(background_tasks: BackgroundTasks):
 def generate_mock_response(query: str, mode: str, persona: str, context: List[Dict[str, Any]]) -> str:
     """Generate friendly mock response when AI service is not available"""
     
+    # Handle casual greetings
+    casual_greetings = ["hi", "hello", "hey", "how are you", "how are", "what's up", "sup", "good morning", "good afternoon", "good evening"]
+    thank_you_patterns = ["thanks", "thank you", "ty", "thx"]
+    
+    query_lower = query.lower().strip().rstrip('?!.')
+    
+    if any(greeting in query_lower for greeting in casual_greetings):
+        return """Hey there! 👋 I'm doing great, thanks for asking! 
+
+🔧 **I'm currently in beta testing mode** - think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits! ☕🤖
+
+I'm excited to chat with you about:
+🚀 **Career & Tech** • 🎓 **Academic Journey** • 💰 **Financial Planning** • ⚙️ **Technical Skills** • 🌟 **Life Guidance**
+
+What's on your mind today? I'd love to help you explore any of these areas! 😊"""
+    
+    if any(thanks in query_lower for thanks in thank_you_patterns):
+        return """You're so welcome! 😊 
+
+That's what I'm here for - helping awesome people like you navigate life's challenges and opportunities!
+
+Feel free to ask me anything else about career moves, academic planning, tech skills, financial strategies, or just life in general. I've got tons of knowledge ready to share! 🌟
+
+What else can we explore together? ☕"""
+    
     context_summary = ""
     if context:
         context_summary = f"\n\n💡 I found some relevant info from my knowledge base about {', '.join(set(item['category'] for item in context[:3]))} that might help!"
