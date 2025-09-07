@@ -165,6 +165,7 @@ Tip: Use the settings to customize our conversation style and focus areas!`,
             <h1 className="text-xl font-bold text-gray-900">AskDebarun</h1>
             <p className="text-sm text-gray-600">
               Your AI Buddy • {currentMode.label} • {currentPersona.label}
+              {!isBackendOnline && <span className="text-orange-500"> • Beta Mode</span>}
             </p>
           </div>
         </div>
@@ -346,7 +347,7 @@ Tip: Use the settings to customize our conversation style and focus areas!`,
             <span>Press Enter to send, Shift+Enter for new line</span>
             <span>
               {currentMode.label} mode • {config.enabledKnowledgePacks.length} knowledge areas • 
-              {isBackendOnline ? ' AI Backend' : ' Mock Mode'}
+              {isBackendOnline ? ' Full AI Mode' : ' Beta Testing'}
             </span>
           </div>
         </div>
