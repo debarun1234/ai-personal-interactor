@@ -26,19 +26,19 @@ const App: React.FC = () => {
     {
       id: '2', 
       role: 'assistant',
-      content: `🌟 **Welcome to RoamMentor!** 🌟
+      content: `🌟 Welcome to AskDebarun! 🌟
 
-I'm your AI mentor based on Debarun Ghosh's expertise and experiences. I'm here to guide you through:
+I'm Debarun, your AI Buddy. I'm here to help you navigate life's challenges using my expertise and experience in:
 
-**💼 Career & Professional Growth**
-**🎓 Academic Journey & Research** 
-**💰 Financial Planning & Investments**
-**⚙️ Technical Skills & SRE/DevOps**
-**🌟 Life Guidance & Personal Development**
+💼 Career & Professional Growth
+🎓 Academic Journey & Research 
+💰 Financial Planning & Investments
+⚙️ Technical Skills & SRE/DevOps
+🌟 Life Guidance & Personal Development
 
-**What's on your mind?** Share what you're working on or what challenges you're facing, and I'll help you find the best path forward.
+What's on your mind? Share what you're working on or what challenges you're facing, and I'll help you find the best path forward.
 
-*Tip: Use the settings to customize our conversation style and focus areas!*`,
+Tip: Use the settings to customize our conversation style and focus areas!`,
       timestamp: new Date()
     }
   ]);
@@ -162,9 +162,9 @@ I'm your AI mentor based on Debarun Ghosh's expertise and experiences. I'm here 
             <Brain className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-gray-900">RoamMentor</h1>
+            <h1 className="text-xl font-bold text-gray-900">AskDebarun</h1>
             <p className="text-sm text-gray-600">
-              {currentMode.label} • {currentPersona.label}
+              Your AI Buddy • {currentMode.label} • {currentPersona.label}
             </p>
           </div>
         </div>

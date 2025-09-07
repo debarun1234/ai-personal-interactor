@@ -1,4 +1,4 @@
-# 🌟 RoamMentor - AI Personal Mentor
+# 🌟 AskDebarun - Your AI Buddy
 
 [![Deploy to GitHub Pages](https://github.com/debarun1234/ai-personal-interactor/actions/workflows/deploy.yml/badge.svg)](https://github.com/debarun1234/ai-personal-interactor/actions/workflows/deploy.yml)
 
@@ -190,6 +190,6 @@ Connect with Debarun:
 
 ---
 
-**Ready to start your mentoring journey?** 🚀
+**Ready to start your conversation?** 🚀
 
-[Launch RoamMentor](https://debarun1234.github.io/ai-personal-interactor/) and begin your conversation today!
+[Launch AskDebarun](https://debarun1234.github.io/ai-personal-interactor/) and begin your conversation today!
