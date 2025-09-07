@@ -365,10 +365,10 @@ def generate_mock_response(query: str, mode: str, persona: str, context: List[Di
     if any(greeting in query_lower for greeting in casual_greetings):
         return """Hey there! 👋 I'm doing great, thanks for asking! 
 
-🔧 **I'm currently in beta testing mode** - think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits! ☕🤖
+🔧 I'm currently in beta testing mode - think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits! ☕🤖
 
 I'm excited to chat with you about:
-🚀 **Career & Tech** • 🎓 **Academic Journey** • 💰 **Financial Planning** • ⚙️ **Technical Skills** • 🌟 **Life Guidance**
+🚀 Career & Tech • 🎓 Academic Journey • 💰 Financial Planning • ⚙️ Technical Skills • 🌟 Life Guidance
 
 What's on your mind today? I'd love to help you explore any of these areas! 😊"""
     
@@ -387,21 +387,21 @@ What else can we explore together? ☕"""
     
     base_response = f"""Hey there! 👋 Thanks for asking about "{query}". 
 
-🔧 **I'm currently in beta testing mode!** Think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits. ☕🤖
+🔧 I'm currently in beta testing mode! Think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits. ☕🤖
 
 {context_summary}
 
 While I'm getting my full AI powers activated, I can still help you explore these areas where I have tons of knowledge:
 
-🚀 **Career & Tech**: SRE, DevOps, transitioning from academia to industry
-🎓 **Academic Journey**: PhD applications, research strategies, university selection  
-💰 **Financial Planning**: Tax optimization, investment strategies, salary structuring
-⚙️ **Technical Skills**: AI/ML, automation, enterprise architecture
-🌟 **Life Guidance**: Decision-making, work-life balance, personal growth
+🚀 Career & Tech: SRE, DevOps, transitioning from academia to industry
+🎓 Academic Journey: PhD applications, research strategies, university selection  
+💰 Financial Planning: Tax optimization, investment strategies, salary structuring
+⚙️ Technical Skills: AI/ML, automation, enterprise architecture
+🌟 Life Guidance: Decision-making, work-life balance, personal growth
 
-**Coming Soon**: Full AI-powered conversations! I'm just waiting for my creator to flip the "smart mode" switch. Until then, I'm like a friendly librarian who knows exactly where all the good stuff is stored! 📚✨
+Coming Soon: Full AI-powered conversations! I'm just waiting for my creator to flip the "smart mode" switch. Until then, I'm like a friendly librarian who knows exactly where all the good stuff is stored! 📚✨
 
-**Pro tip**: Try exploring different topics - my knowledge search is already working great, and you might find exactly what you're looking for!
+Pro tip: Try exploring different topics - my knowledge search is already working great, and you might find exactly what you're looking for!
 
 What would you like to dive into? I promise the wait for full AI mode will be worth it! 😊"""
     

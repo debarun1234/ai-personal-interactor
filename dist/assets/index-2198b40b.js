@@ -158,10 +158,10 @@ Tags: ${n.tags.join(", ")}
 ---
 `)}static extractRelevantContext(t,n){const r=this.searchKnowledge(t,3),i=n.length>0?r.filter(o=>n.includes(o.category)):r;return this.generateContextFromKnowledge(i)}}class Ah{static async sendMessage(t,n,r,i){var s;await new Promise(a=>setTimeout(a,1e3+Math.random()*2e3));const o=((s=t[t.length-1])==null?void 0:s.content)||"",l=Th.extractRelevantContext(o,i);return this.generateMockResponse(o,n,r,l)}static generateMockResponse(t,n,r,i){const o=/^(hi|hello|hey|how are you|how are|what's up|sup|good morning|good afternoon|good evening)\??!*$/i,l=/^(thanks|thank you|ty|thx)\??!*$/i;return o.test(t.trim())?this.generateGreetingResponse():l.test(t.trim())?this.generateThankYouResponse():{career:this.generateCareerResponse(t,r,i),academics:this.generateAcademicResponse(t,r,i),finance:this.generateFinanceResponse(t,r,i),technical:this.generateTechnicalResponse(t,r,i),life:this.generateLifeResponse(t,r,i)}[n]||this.generateGeneralResponse(t,r)}static generateGreetingResponse(){return`Hey there! 👋 I'm doing great, thanks for asking! 
 
-🔧 **I'm currently in beta testing mode** - think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits! ☕🤖
+🔧 I'm currently in beta testing mode - think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits! ☕🤖
 
 I'm excited to chat with you about:
-🚀 **Career & Tech** • 🎓 **Academic Journey** • 💰 **Financial Planning** • ⚙️ **Technical Skills** • 🌟 **Life Guidance**
+🚀 Career & Tech • 🎓 Academic Journey • 💰 Financial Planning • ⚙️ Technical Skills • 🌟 Life Guidance
 
 What's on your mind today? I'd love to help you explore any of these areas! 😊`}static generateThankYouResponse(){return`You're so welcome! 😊 
 
@@ -251,19 +251,19 @@ ${r?`
 **Personal insights:**
 ${r}`:""}`;return this.applyPersona(i,n)}static generateGeneralResponse(t,n){const r=`Hey there! 👋 Thanks for asking about "${t}". 
 
-🔧 **I'm currently in beta testing mode!** Think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits. ☕🤖
+🔧 I'm currently in beta testing mode! Think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits. ☕🤖
 
 While I'm getting my full AI powers activated, I can still help you explore these areas where I have tons of knowledge:
 
-🚀 **Career & Tech**: SRE, DevOps, transitioning from academia to industry
-🎓 **Academic Journey**: PhD applications, research strategies, university selection  
-💰 **Financial Planning**: Tax optimization, investment strategies, salary structuring
-⚙️ **Technical Skills**: AI/ML, automation, enterprise architecture
-🌟 **Life Guidance**: Decision-making, work-life balance, personal growth
+🚀 Career & Tech: SRE, DevOps, transitioning from academia to industry
+🎓 Academic Journey: PhD applications, research strategies, university selection  
+💰 Financial Planning: Tax optimization, investment strategies, salary structuring
+⚙️ Technical Skills: AI/ML, automation, enterprise architecture
+🌟 Life Guidance: Decision-making, work-life balance, personal growth
 
-**Coming Soon**: Full AI-powered conversations! I'm just waiting for my creator to flip the "smart mode" switch. Until then, I'm like a friendly librarian who knows exactly where all the good stuff is stored! 📚✨
+Coming Soon: Full AI-powered conversations! I'm just waiting for my creator to flip the "smart mode" switch. Until then, I'm like a friendly librarian who knows exactly where all the good stuff is stored! 📚✨
 
-**Pro tip**: Try exploring different topics - my knowledge search is already working great, and you might find exactly what you're looking for!
+Pro tip: Try exploring different topics - my knowledge search is already working great, and you might find exactly what you're looking for!
 
 What would you like to dive into? I promise the wait for full AI mode will be worth it! 😊`;return this.applyPersona(r,n)}static applyPersona(t,n){const i={empathetic:o=>`I understand this can be challenging, and I'm here to support you through it.
 
