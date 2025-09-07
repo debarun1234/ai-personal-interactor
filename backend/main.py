@@ -354,31 +354,31 @@ async def rebuild_knowledge_base(background_tasks: BackgroundTasks):
     }
 
 def generate_mock_response(query: str, mode: str, persona: str, context: List[Dict[str, Any]]) -> str:
-    """Generate mock response when AI service is not available"""
+    """Generate friendly mock response when AI service is not available"""
     
     context_summary = ""
     if context:
-        context_summary = f"\n\nBased on relevant information from my knowledge base about {', '.join(set(item['category'] for item in context[:3]))}:"
+        context_summary = f"\n\n💡 I found some relevant info from my knowledge base about {', '.join(set(item['category'] for item in context[:3]))} that might help!"
     
-    base_response = f"""Thank you for your question about "{query}". 
+    base_response = f"""Hey there! 👋 Thanks for asking about "{query}". 
 
-As your AI mentor based on Debarun's expertise, I'd be happy to help you with {mode} guidance using a {persona} approach.{context_summary}
+🔧 **I'm currently in beta testing mode!** Think of me as Debarun's AI buddy who's still getting his coffee and warming up the brain circuits. ☕🤖
 
-**Mock Response Notice**: The AI service is currently not available, so this is a simulated response. To get real AI-powered mentoring, please configure your OpenAI or Anthropic API keys.
+{context_summary}
 
-**What I can help with:**
-- Career guidance and SRE/DevOps expertise
-- Academic planning and PhD applications  
-- Financial planning and investment strategies
-- Technical mentoring and automation
-- Life guidance and decision-making
+While I'm getting my full AI powers activated, I can still help you explore these areas where I have tons of knowledge:
 
-**Next steps:**
-1. Set up AI API keys for full functionality
-2. Ask specific questions about your situation
-3. Use the knowledge search to explore topics
+🚀 **Career & Tech**: SRE, DevOps, transitioning from academia to industry
+🎓 **Academic Journey**: PhD applications, research strategies, university selection  
+💰 **Financial Planning**: Tax optimization, investment strategies, salary structuring
+⚙️ **Technical Skills**: AI/ML, automation, enterprise architecture
+🌟 **Life Guidance**: Decision-making, work-life balance, personal growth
 
-Would you like to know more about any specific area?"""
+**Coming Soon**: Full AI-powered conversations! I'm just waiting for my creator to flip the "smart mode" switch. Until then, I'm like a friendly librarian who knows exactly where all the good stuff is stored! 📚✨
+
+**Pro tip**: Try exploring different topics - my knowledge search is already working great, and you might find exactly what you're looking for!
+
+What would you like to dive into? I promise the wait for full AI mode will be worth it! 😊"""
     
     return base_response
 
