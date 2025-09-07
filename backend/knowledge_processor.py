@@ -242,7 +242,8 @@ class KnowledgeProcessor:
         
         # Normalize embeddings for cosine similarity
         normalized_embeddings = self.embeddings / np.linalg.norm(self.embeddings, axis=1, keepdims=True)
-        self.index.add(normalized_embeddings.astype('float32'))
+        normalized_embeddings_float32 = normalized_embeddings.astype('float32')
+        self.index.add(x=normalized_embeddings_float32)
         
         logger.info(f"FAISS index created with {self.index.ntotal} vectors")
     
@@ -256,10 +257,12 @@ class KnowledgeProcessor:
         query_embedding = query_embedding / np.linalg.norm(query_embedding, axis=1, keepdims=True)
         
         # Search
-        scores, indices = self.index.search(query_embedding.astype('float32'), top_k)
+        distances = np.empty((query_embedding.shape[0], top_k), dtype=np.float32)
+        indices = np.empty((query_embedding.shape[0], top_k), dtype=np.int64)
+        distances, indices = self.index.search(query_embedding.astype('float32'), top_k)
         
         results = []
-        for i, (score, idx) in enumerate(zip(scores[0], indices[0])):
+        for i, (score, idx) in enumerate(zip(distances[0], indices[0])):
             if idx < len(self.knowledge_items):
                 item = self.knowledge_items[idx]
                 results.append({

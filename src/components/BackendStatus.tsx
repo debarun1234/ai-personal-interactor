@@ -25,7 +25,7 @@ export const BackendStatus: React.FC<BackendStatusProps> = ({ onStatusChange }) 
 
   const checkBackendStatus = async () => {
     try {
-      const response = await fetch('http://localhost:8000/health');
+      const response = await fetch('https://ai-personal-interactor-production.up.railway.app/health');
       if (response.ok) {
         const data = await response.json();
         setBackendInfo(data);

@@ -5,7 +5,9 @@ import {
   Brain,
   Loader2,
   Sparkles,
-  X
+  X,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { ChatMessage } from './components/ChatMessage';
 import { BackendStatus } from './components/BackendStatus';
@@ -47,6 +49,7 @@ Tip: Use the settings to customize our conversation style and focus areas!`,
   const [isLoading, setIsLoading] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [isBackendOnline, setIsBackendOnline] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false);
   
   // Chat configuration
   const [config, setConfig] = useState<ChatConfig>({
@@ -294,18 +297,31 @@ Tip: Use the settings to customize our conversation style and focus areas!`,
       {messages.length <= 2 && (
         <div className="p-4 bg-white border-t">
           <div className="max-w-4xl mx-auto">
-            <p className="text-sm text-gray-600 mb-3">💡 Try asking:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              {currentMode.suggestedQuestions.map((question, index) => (
-                <button
-                  key={index}
-                  onClick={() => setInput(question)}
-                  className="text-left p-3 bg-gray-50 hover:bg-gray-100 rounded-lg text-sm text-gray-700 transition-colors"
-                >
-                  {question}
-                </button>
-              ))}
-            </div>
+            <button
+              onClick={() => setShowSuggestions(!showSuggestions)}
+              className="flex items-center justify-between w-full text-left mb-3 hover:bg-gray-50 p-2 rounded-lg transition-colors"
+            >
+              <p className="text-sm text-gray-600">💡 Try asking...</p>
+              {showSuggestions ? (
+                <ChevronUp className="w-4 h-4 text-gray-400" />
+              ) : (
+                <ChevronDown className="w-4 h-4 text-gray-400" />
+              )}
+            </button>
+            
+            {showSuggestions && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {currentMode.suggestedQuestions.map((question, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setInput(question)}
+                    className="text-left p-3 bg-gray-50 hover:bg-gray-100 rounded-lg text-sm text-gray-700 transition-colors"
+                  >
+                    {question}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}

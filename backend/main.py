@@ -26,7 +26,12 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:4173", "https://*.github.io"],
+    allow_origins=[
+        "http://localhost:5173", 
+        "http://localhost:4173", 
+        "https://*.github.io",
+        "https://debarun1234.github.io"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
