@@ -4,7 +4,7 @@ An interactive AI chatbot that serves as your personal mentor, based on Debarun 
 
 ## 🚀 Live Demo
 
-Visit: [https://dghos.github.io/ai-personal-interactor/](https://dghos.github.io/ai-personal-interactor/)
+Visit: [https://debarun1234.github.io/ai-personal-interactor/](https://debarun1234.github.io/ai-personal-interactor/)
 
 ## ✨ Features
 
@@ -68,7 +68,7 @@ The AI mentor draws from:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/dghos/ai-personal-interactor.git
+   git clone https://github.com/debarun1234/ai-personal-interactor.git
    cd ai-personal-interactor
    ```
 
@@ -177,7 +177,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Connect with Debarun:
 - LinkedIn: [Debarun Ghosh](https://linkedin.com/in/debarun-ghosh)
-- GitHub: [@dghos](https://github.com/dghos)
+- GitHub: [@debarun1234](https://github.com/debarun1234)
 
 ## 🙏 Acknowledgments
 
@@ -190,4 +190,4 @@ Connect with Debarun:
 
 **Ready to start your mentoring journey?** 🚀
 
-[Launch RoamMentor](https://dghos.github.io/ai-personal-interactor/) and begin your conversation today!
+[Launch RoamMentor](https://debarun1234.github.io/ai-personal-interactor/) and begin your conversation today!
