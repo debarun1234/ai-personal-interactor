@@ -1,4 +1,4 @@
-# 🌟 AskDebarun - Your AI Buddy
+# 🌟 AskRick - Your AI Buddy
 
 [![Deploy to GitHub Pages](https://github.com/debarun1234/ai-personal-interactor/actions/workflows/deploy.yml/badge.svg)](https://github.com/debarun1234/ai-personal-interactor/actions/workflows/deploy.yml)
 
@@ -192,4 +192,4 @@ Connect with Debarun:
 
 **Ready to start your conversation?** 🚀
 
-[Launch AskDebarun](https://debarun1234.github.io/ai-personal-interactor/) and begin your conversation today!
+[Launch AskRick](https://debarun1234.github.io/ai-personal-interactor/) and begin your conversation today!

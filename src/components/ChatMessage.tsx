@@ -40,7 +40,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
         <div className={`inline-block p-3 rounded-lg ${
           isUser 
             ? 'bg-primary-500 text-white rounded-br-sm' 
-            : 'bg-gray-100 text-gray-900 rounded-bl-sm'
+            : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-bl-sm'
         }`}>
           <div className="whitespace-pre-wrap break-words">
             {message.content}
@@ -50,7 +50,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
           {isAssistant && (
             <button
               onClick={handleCopy}
-              className="mt-2 p-1 text-gray-500 hover:text-gray-700 transition-colors"
+              className="mt-2 p-1 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
               title="Copy message"
             >
               {copied ? (
@@ -63,19 +63,19 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
         </div>
         
         {/* Timestamp */}
-        <div className={`text-xs text-gray-500 mt-1 ${isUser ? 'text-right' : 'text-left'}`}>
+        <div className={`text-xs text-gray-500 dark:text-gray-400 mt-1 ${isUser ? 'text-right' : 'text-left'}`}>
           {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
         </div>
 
         {/* Citations */}
         {message.citations && message.citations.length > 0 && (
           <div className="mt-2 text-sm">
-            <div className="text-gray-600 font-medium mb-1">Sources:</div>
+            <div className="text-gray-600 dark:text-gray-300 font-medium mb-1">Sources:</div>
             {message.citations.map((citation, index) => (
-              <div key={index} className="text-blue-600 hover:text-blue-800">
+              <div key={index} className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
                 • {citation.title}
                 {citation.snippet && (
-                  <div className="text-gray-600 text-xs ml-2">
+                  <div className="text-gray-600 dark:text-gray-400 text-xs ml-2">
                     {citation.snippet}
                   </div>
                 )}

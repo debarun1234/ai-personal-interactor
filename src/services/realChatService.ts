@@ -1,7 +1,7 @@
 import { ChatMessage } from '../types';
 
-// Try Railway first, fallback to localhost for development
-const API_BASE_URL = (import.meta as any).env?.VITE_API_BASE_URL || 'https://ai-personal-interactor-production.up.railway.app';
+// Use local backend for development
+const API_BASE_URL = (import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:8000';
 
 export interface ChatServiceResponse {
   response: string;

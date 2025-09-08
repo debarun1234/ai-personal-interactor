@@ -28,6 +28,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173", 
+        "http://localhost:5174", 
+        "http://localhost:5175", 
         "http://localhost:4173", 
         "https://*.github.io",
         "https://debarun1234.github.io"

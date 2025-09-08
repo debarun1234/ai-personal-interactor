@@ -35,7 +35,7 @@ export class KnowledgeSearchService {
     if (items.length === 0) return '';
     
     return items.map(item => `
-**${item.title}** (${item.category})
+${item.title} (${item.category})
 ${item.content}
 Tags: ${item.tags.join(', ')}
 `).join('\n---\n');
@@ -126,19 +126,19 @@ What else can we explore together? ☕`;
   private static generateCareerResponse(_userMessage: string, persona: string, context: string): string {
     const baseResponse = `Based on my experience transitioning from academia to industry and working as an SRE at ANZ, here's my perspective:
 
-**Why this matters:** Career decisions shape not just your professional growth but your entire life trajectory. The tech industry, especially SRE and AI roles, requires both technical depth and strategic thinking.
+Why this matters: Career decisions shape not just your professional growth but your entire life trajectory. The tech industry, especially SRE and AI roles, requires both technical depth and strategic thinking.
 
-**How to approach it:** 
-1. **Skill Development**: Focus on cloud-native technologies, automation, and AI integration
-2. **Practical Experience**: Build projects that demonstrate real-world problem-solving
-3. **Network Building**: Connect with professionals in your target field
+How to approach it: 
+1. Skill Development: Focus on cloud-native technologies, automation, and AI integration
+2. Practical Experience: Build projects that demonstrate real-world problem-solving
+3. Network Building: Connect with professionals in your target field
 
-**What next:** 
+What next: 
 - Create a portfolio showcasing your technical projects
 - Practice system design and troubleshooting scenarios
 - Consider contributing to open-source projects
 
-${context ? `\n**Relevant from my experience:**\n${context}` : ''}`;
+${context ? `\nRelevant from my experience:\n${context}` : ''}`;
 
     return this.applyPersona(baseResponse, persona);
   }
@@ -146,19 +146,19 @@ ${context ? `\n**Relevant from my experience:**\n${context}` : ''}`;
   private static generateAcademicResponse(_userMessage: string, persona: string, context: string): string {
     const baseResponse = `Drawing from my academic journey and current PhD applications, here's what I've learned:
 
-**Why this matters:** Academic success requires balancing theoretical knowledge with practical application. My research in 5G energy optimization taught me the importance of choosing problems that matter.
+Why this matters: Academic success requires balancing theoretical knowledge with practical application. My research in 5G energy optimization taught me the importance of choosing problems that matter.
 
-**How to approach it:**
-1. **Research Focus**: Choose problems that intersect multiple domains (like AI + networking)
-2. **Publication Strategy**: Aim for quality over quantity - my IEEE papers opened many doors
-3. **University Selection**: Target programs that align with your research interests and career goals
+How to approach it:
+1. Research Focus: Choose problems that intersect multiple domains (like AI + networking)
+2. Publication Strategy: Aim for quality over quantity - my IEEE papers opened many doors
+3. University Selection: Target programs that align with your research interests and career goals
 
-**What next:**
+What next:
 - Develop a clear research proposal with practical applications
 - Build relationships with potential supervisors
 - Create a portfolio of your research work
 
-${context ? `\n**From my research experience:**\n${context}` : ''}`;
+${context ? `\nFrom my research experience:\n${context}` : ''}`;
 
     return this.applyPersona(baseResponse, persona);
   }
@@ -166,19 +166,19 @@ ${context ? `\n**From my research experience:**\n${context}` : ''}`;
   private static generateFinanceResponse(_userMessage: string, persona: string, context: string): string {
     const baseResponse = `From my experience managing finances as a young professional, here's practical advice:
 
-**Why this matters:** Financial decisions compound over time. Smart choices now create freedom for future opportunities like education or career changes.
+Why this matters: Financial decisions compound over time. Smart choices now create freedom for future opportunities like education or career changes.
 
-**How to approach it:**
-1. **Tax Optimization**: Structure your salary efficiently (HRA, PF, allowances)
-2. **Investment Strategy**: Start with SIPs in diversified mutual funds
-3. **Emergency Planning**: Maintain 6-9 months of expenses as emergency fund
+How to approach it:
+1. Tax Optimization: Structure your salary efficiently (HRA, PF, allowances)
+2. Investment Strategy: Start with SIPs in diversified mutual funds
+3. Emergency Planning: Maintain 6-9 months of expenses as emergency fund
 
-**What next:**
+What next:
 - Set up automated savings and investments
 - Choose credit cards that align with your spending patterns
 - Track expenses using tools like Google Sheets
 
-${context ? `\n**Financial insights:**\n${context}` : ''}`;
+${context ? `\nFinancial insights:\n${context}` : ''}`;
 
     return this.applyPersona(baseResponse, persona);
   }
@@ -186,19 +186,19 @@ ${context ? `\n**Financial insights:**\n${context}` : ''}`;
   private static generateTechnicalResponse(_userMessage: string, persona: string, context: string): string {
     const baseResponse = `Based on my work implementing AI-driven automation at ANZ, here's my technical perspective:
 
-**Why this matters:** Modern systems require intelligent automation and proactive monitoring. The integration of AI with traditional operations is becoming essential.
+Why this matters: Modern systems require intelligent automation and proactive monitoring. The integration of AI with traditional operations is becoming essential.
 
-**How to approach it:**
-1. **Observability First**: Implement comprehensive monitoring before optimization
-2. **Automation Strategy**: Use AI to enhance human decision-making, not replace it
-3. **Scalable Architecture**: Design systems that can evolve with business needs
+How to approach it:
+1. Observability First: Implement comprehensive monitoring before optimization
+2. Automation Strategy: Use AI to enhance human decision-making, not replace it
+3. Scalable Architecture: Design systems that can evolve with business needs
 
-**What next:**
+What next:
 - Start with monitoring and alerting fundamentals
 - Experiment with LLM integration in your workflows
 - Build expertise in both infrastructure and AI tools
 
-${context ? `\n**Technical experience:**\n${context}` : ''}`;
+${context ? `\nTechnical experience:\n${context}` : ''}`;
 
     return this.applyPersona(baseResponse, persona);
   }
@@ -206,19 +206,19 @@ ${context ? `\n**Technical experience:**\n${context}` : ''}`;
   private static generateLifeResponse(_userMessage: string, persona: string, context: string): string {
     const baseResponse = `Life is about finding the right balance between ambition and contentment. Here's what I've learned:
 
-**Why this matters:** Personal growth and professional success are interconnected. The choices we make shape not just our careers but our overall life satisfaction.
+Why this matters: Personal growth and professional success are interconnected. The choices we make shape not just our careers but our overall life satisfaction.
 
-**How to approach it:**
-1. **Values Alignment**: Ensure your actions align with your core values
-2. **Continuous Learning**: Stay curious and open to new experiences
-3. **Relationship Building**: Invest in meaningful connections
+How to approach it:
+1. Values Alignment: Ensure your actions align with your core values
+2. Continuous Learning: Stay curious and open to new experiences
+3. Relationship Building: Invest in meaningful connections
 
-**What next:**
+What next:
 - Reflect on what truly matters to you
 - Set goals that balance personal and professional growth
 - Find mentors and communities that support your journey
 
-${context ? `\n**Personal insights:**\n${context}` : ''}`;
+${context ? `\nPersonal insights:\n${context}` : ''}`;
 
     return this.applyPersona(baseResponse, persona);
   }
