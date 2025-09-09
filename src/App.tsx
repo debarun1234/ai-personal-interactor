@@ -71,12 +71,17 @@ Tip: Use the settings to customize our conversation style and focus areas!`,
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Focus input on load
+  // Focus input on load and hide loading after short delay
   useEffect(() => {
     inputRef.current?.focus();
+    // Show app after a short loading animation
+    const timer = setTimeout(() => {
+      setIsAppLoading(false);
+    }, 1000); // Reduced from longer delays
+    return () => clearTimeout(timer);
   }, []);
 
-  // Check backend status periodically
+  // Check backend status periodically (non-blocking)
   useEffect(() => {
     const checkBackend = async () => {
       try {
@@ -87,9 +92,13 @@ Tip: Use the settings to customize our conversation style and focus areas!`,
       }
     };
 
-    checkBackend();
+    // Start check after app loads to avoid blocking initial render
+    const timer = setTimeout(checkBackend, 1500);
     const interval = setInterval(checkBackend, 30000);
-    return () => clearInterval(interval);
+    return () => {
+      clearTimeout(timer);
+      clearInterval(interval);
+    };
   }, []);
 
   const handleSend = async () => {

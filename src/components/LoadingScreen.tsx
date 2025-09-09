@@ -25,21 +25,21 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete,
       label: 'Connecting to AI Backend',
       icon: <Wifi className="w-5 h-5" />,
       status: 'pending',
-      delay: 500
+      delay: 200
     },
     {
       id: 'knowledge',
       label: 'Loading Knowledge Base',
       icon: <Database className="w-5 h-5" />,
       status: 'pending',
-      delay: 1000
+      delay: 300
     },
     {
       id: 'ai',
       label: 'Initializing AI System',
       icon: <Brain className="w-5 h-5" />,
       status: 'pending',
-      delay: 800
+      delay: 200
     }
   ]);
 
