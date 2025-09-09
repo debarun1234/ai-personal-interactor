@@ -1,12 +1,4 @@
 {
   "name": "askrickchatbot",
-  "compatibility_date": "2025-09-09",
-  "assets": {
-    "directory": "./dist",
-    "html_handling": "force-https",
-    "not_found_handling": "single-page-app"
-  },
-  "build": {
-    "command": "npm run build"
-  }
+  "compatibility_date": "2024-01-01"
 }
